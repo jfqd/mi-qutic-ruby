@@ -1,0 +1,8 @@
+name="qutic-ruby"
+organization="qutic development"
+brand="Ruby Instance"
+version="17.3.0"
+description="qutic ruby image"
+homepage="https://github.com/jfqd/mi-qutic-ruby"
+users="root admin ruby"
+base="fe009b1e-d2d1-11e7-b5f6-6b650b6b2e69"
