@@ -1,12 +1,15 @@
 gcc49
+gmake
 apache
 mysql-client-5.6.38
 nodejs
+libeio
 git-base
 ImageMagick
 ruby22
+ruby22-daemon_controller
 ruby22-bundler
-ruby22-mysql2
 ruby22-nokogiri
 ruby22-coffee-script
 ruby22-passenger
+ap24-ruby22-passenger

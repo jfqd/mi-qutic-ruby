@@ -30,10 +30,27 @@ for CONF_RM in ${HTTPD_CONF_RM}; do
 done
 
 echo "* Setup ruby env"
-mkdir -p /home/ruby/www/shared
-chown -R ruby:ruby /home/ruby/www
 
-gem install gemenv -v 0.0.3
+echo "gem: --no-rdoc --no-ri " >> /opt/local/etc/gemrc
+gem install gemenv
+gem install mysql2
+
+# gem install passenger
+# /opt/local/bin/passenger-install-apache2-module -a --languages ruby
+
+echo "* Setup ruby home"
+groupadd ruby
+useradd -m -s /usr/bin/bash -d /home/ruby -g ruby ruby
+
+mkdir -p /home/ruby/www/releases
+mkdir -p /home/ruby/www/shared/config
+mkdir -p /home/ruby/www/shared/content
+mkdir -p /home/ruby/www/shared/logs
+mkdir -p /home/ruby/www/shared/system
+cd /home/ruby/www/shared
+/opt/local/bin/gemenv gems
+
+chown -R ruby:ruby /home/ruby/www
 
 # Configuring image specific packages
 echo "* Configuring image specific packages.";
@@ -41,6 +58,8 @@ mkdir -p /var/log/httpd/old
 
 # Clean up
 echo "* Cleaning up."
+pkgin -y remove gmake
+pkgin -y remove gcc49
 rm /root/customize
 
 # Prepare image for provisioning
