@@ -4,6 +4,7 @@ apache
 mysql-client-5.6.38
 nodejs
 ImageMagick
+git-base
 ruby22
 ruby22-daemon_controller
 ruby22-bundler
