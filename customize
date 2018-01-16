@@ -91,6 +91,9 @@ chown -R ruby:ruby /home/ruby/www
 echo "* Configuring image specific packages.";
 mkdir -p /var/log/httpd/old
 
+svccfg import /opt/qutic/mysql-proxy/share/mysql-proxy.xml
+svcadm enable mysql-proxy
+
 # Clean up
 echo "* Cleaning up."
 pkgin -y remove gmake

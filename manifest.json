@@ -27,6 +27,7 @@
     "server_alias":           {"type": "text", "description": "vhost alias-name(s)"},
     "server_port":            {"type": "text", "description": "vhost port"},
     "passenger_maxinstances": {"type": "text", "description": "max passenger instances"},
-    "passenger_workers":      {"type": "text", "description": "num of waiting passenger workers"}
+    "passenger_workers":      {"type": "text", "description": "num of waiting passenger workers"},
+    "proxy_source":           {"type": "text", "description": "ip or host of a mysql-server"}
   }
 }
