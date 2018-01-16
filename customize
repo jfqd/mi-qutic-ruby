@@ -40,8 +40,9 @@ gem install mysql2
 
 echo "* Setup ruby home"
 groupadd ruby
-#groupadd sshlogin
 useradd -m -s /usr/bin/bash -d /home/ruby -g ruby ruby
+# groupadd sshlogin
+# usermod -G ruby,sshlogin ruby
 
 cat >> /home/ruby/.bashrc << EOF
 source /home/ruby/www/shared/gems/bin/activate
@@ -91,13 +92,14 @@ chown -R ruby:ruby /home/ruby/www
 echo "* Configuring image specific packages.";
 mkdir -p /var/log/httpd/old
 
+chmod 0640 /opt/qutic/mysql-proxy/etc/my.cnf
 svccfg import /opt/qutic/mysql-proxy/share/mysql-proxy.xml
 svcadm enable mysql-proxy
 
 # Clean up
 echo "* Cleaning up."
-pkgin -y remove gmake
-pkgin -y remove gcc49
+#pkgin -y remove gmake
+#pkgin -y remove gcc49
 rm /root/customize
 
 # Prepare image for provisioning
