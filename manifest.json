@@ -23,8 +23,9 @@
     "ssh_host_dsa_key.pub":   {"type": "text", "description": "public SSH dsa key for the host daemon"},
     "munin_master_allow":     {"type": "text", "description": "ip addresses (alternative hostname) of the munin master node"},
     "vfstab":                 {"type": "text", "description": "nfs mountpoint for vfstab-file"},
-    "server_name":            {"type": "text", "description": "app server-name"},
-    "server_alias":           {"type": "text", "description": "alias-name(s)"},
+    "server_name":            {"type": "text", "description": "vhost app server-name"},
+    "server_alias":           {"type": "text", "description": "vhost alias-name(s)"},
+    "server_port":            {"type": "text", "description": "vhost port"},
     "passenger_maxinstances": {"type": "text", "description": "max passenger instances"},
     "passenger_workers":      {"type": "text", "description": "num of waiting passenger workers"}
   }

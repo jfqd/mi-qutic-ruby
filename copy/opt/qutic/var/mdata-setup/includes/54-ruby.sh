@@ -10,6 +10,14 @@ else
   sed -i "s:ServerAlias SERVER_ALIAS::g" /opt/local/etc/httpd/vhosts/01-ruby.conf
 fi
 
+if mdata-get server_port 1>/dev/null 2>&1; then
+  SERVER_PORT=`mdata-get server_port`
+  sed -i "s:SERVER_PORT:$SERVER_PORT:g" /opt/local/etc/httpd/vhosts/01-ruby.conf
+else
+  sed -i "s:Listen SERVER_PORT::g" /opt/local/etc/httpd/vhosts/01-ruby.conf
+  sed -i "s:SERVER_PORT:80:g" /opt/local/etc/httpd/vhosts/01-ruby.conf
+fi
+
 MAXINSTANCES=10
 if mdata-get passenger_maxinstances 1>/dev/null 2>&1; then
   MAXINSTANCES=`mdata-get passenger_maxinstances`

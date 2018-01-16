@@ -4,10 +4,10 @@
 if mdata-get ruby_authorized_keys 1>/dev/null 2>&1; then
   home='/home/ruby'
   mkdir -p ${home}/.ssh
-  echo "# This file is managed by mdata-get admin_authorized_keys" \
+  echo "# This file is managed by mdata-get ruby_authorized_keys" \
     > ${home}/.ssh/authorized_keys
   mdata-get admin_authorized_keys >> ${home}/.ssh/authorized_keys
   chmod 700 ${home}/.ssh
   chmod 644 ${home}/.ssh/authorized_keys
-  chown admin:staff ${home}/.ssh/authorized_keys
+  chown ruby:ruby ${home}/.ssh/authorized_keys
 fi
