@@ -40,15 +40,50 @@ gem install mysql2
 
 echo "* Setup ruby home"
 groupadd ruby
+#groupadd sshlogin
 useradd -m -s /usr/bin/bash -d /home/ruby -g ruby ruby
+
+cat >> /home/ruby/.bashrc << EOF
+source /home/ruby/www/shared/gems/bin/activate
+EOF
 
 mkdir -p /home/ruby/www/releases
 mkdir -p /home/ruby/www/shared/config
 mkdir -p /home/ruby/www/shared/content
-mkdir -p /home/ruby/www/shared/logs
+mkdir -p /home/ruby/www/shared/log
 mkdir -p /home/ruby/www/shared/system
 cd /home/ruby/www/shared
 /opt/local/bin/gemenv gems
+
+cat >> /home/ruby/www/shared/gems/bin/ruby << EOF
+#!/usr/bin/env bash
+DIR=$(dirname "${BASH_SOURCE[0]}")
+if [[ -f "$DIR/activate" ]]
+then
+  source "$DIR/activate"
+  exec /opt/local/bin/ruby "$@"
+else
+  echo "ERROR: Missing gemenv environment file: '$DIR/activate'" >&2
+  exit 1
+fi
+EOF
+chmod +x /home/ruby/www/shared/gems/bin/ruby
+
+cat > /home/ruby/www/shared/gems/bin/activate << EOF
+export VIRTUAL_ENV="/home/ruby/www/shared/gems"
+export PATH="$VIRTUAL_ENV/gem_home/bin:/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin"
+
+if [ -n "$GEM_HOME" ]; then
+  unset GEM_HOME
+fi
+
+export GEM_HOME=$VIRTUAL_ENV/gem_home
+export GEM_PATH=$(/opt/local/bin/gem env home):/opt/local/lib/ruby/gems/2.2.0
+
+if [ -n "$BASH" -o -n "$ZSH_VERSION" ] ; then
+    hash -r 2> /dev/null
+fi
+EOF
 
 chown -R ruby:ruby /home/ruby/www
 
