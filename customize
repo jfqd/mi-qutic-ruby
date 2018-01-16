@@ -41,6 +41,8 @@ gem install mysql2
 echo "* Setup ruby home"
 groupadd ruby
 useradd -m -s /usr/bin/bash -d /home/ruby -g ruby ruby
+passwd -N ruby
+passwd -d ruby
 # groupadd sshlogin
 # usermod -G ruby,sshlogin ruby
 
