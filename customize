@@ -12,6 +12,9 @@ MUNIN_PLUGINS="
 	passenger_status
 "
 
+echo "* Activate munin plugins"
+/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
 echo "* Remove unused httpd config files"
 HTTPD_CONF_RM="httpd-autoindex.conf
 httpd-dav.conf
