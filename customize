@@ -64,7 +64,7 @@ cd /home/ruby/www/shared
 mv /var/zoneinit/tmp/activate /home/ruby/www/shared/gems/bin/activate
 mv /var/zoneinit/tmp/ruby /home/ruby/www/shared/gems/bin/ruby
 chmod +x /home/ruby/www/shared/gems/bin/ruby
-rm /var/zoneinit/tmp
+rm -rf /var/zoneinit/tmp
 chown -R ruby:ruby /home/ruby/www
 
 # Configuring image specific packages
