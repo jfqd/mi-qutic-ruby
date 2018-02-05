@@ -13,3 +13,5 @@ gsed -i \
      -e "s/# unixsocket \/tmp\/redis.sock/unixsocket \/var\/tmp\/redis.sock/" \
      -e "s/bind 127.0.0.1/bind ${IP_INTERNAL:-${IP_EXTERNAL}}/" \
      /opt/local/etc/redis.conf
+
+touch /var/log/redis/redis.log
