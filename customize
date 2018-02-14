@@ -10,6 +10,8 @@ MUNIN_PLUGINS="
 	apache_processes
 	apache_volume
 	passenger_status
+	ps_httpd
+	ps_delayed_job
 "
 
 echo "* Activate munin plugins"
