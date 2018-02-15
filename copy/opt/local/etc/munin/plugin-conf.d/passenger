@@ -1,2 +1,3 @@
 [passenger*]
+env.PASSENGER_INSTANCE_REGISTRY_DIR /var/tmp
 user root
