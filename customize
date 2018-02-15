@@ -44,8 +44,8 @@ gem install mysql2
 # /opt/local/bin/passenger-install-apache2-module -a --languages ruby
 
 echo "* Setup ruby home"
-groupadd ruby
-useradd -m -s /usr/bin/bash -d /home/ruby -g ruby ruby
+groupadd -g 1100 ruby
+useradd -m -s /usr/bin/bash -d /home/ruby -u 1100 -g ruby ruby
 passwd -N ruby
 passwd -d ruby
 # groupadd sshlogin
