@@ -1,7 +1,7 @@
 name="qutic-ruby"
 organization="qutic development"
 brand="Ruby Instance"
-version="17.4.1"
+version="17.4.2"
 description="qutic ruby image"
 homepage="https://github.com/jfqd/mi-qutic-ruby"
 users="root admin ruby"

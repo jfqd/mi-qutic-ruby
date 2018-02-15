@@ -1,5 +1,10 @@
 # Changelog
 
+## 17.4.2
+
+* update to latest passenger 5.2.0
+* add nrpe-local config
+
 ## 17.4.1
 
 * build on latest base image 17.4.3
