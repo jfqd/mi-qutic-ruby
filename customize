@@ -40,16 +40,11 @@ echo "gem: --no-rdoc --no-ri " >> /opt/local/etc/gemrc
 gem install gemenv
 gem install mysql2
 
-# gem install passenger
-# /opt/local/bin/passenger-install-apache2-module -a --languages ruby
-
 echo "* Setup ruby home"
 groupadd -g 1100 ruby
 useradd -m -s /usr/bin/bash -d /home/ruby -u 1100 -g ruby ruby
 passwd -N ruby
 passwd -d ruby
-# groupadd sshlogin
-# usermod -G ruby,sshlogin ruby
 
 cat >> /home/ruby/.bashrc << EOF
 source /home/ruby/www/shared/gems/bin/activate
