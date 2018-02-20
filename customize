@@ -37,6 +37,8 @@ done
 echo "* Setup ruby env"
 
 echo "gem: --no-rdoc --no-ri " >> /opt/local/etc/gemrc
+gem update --system
+gem install bundler
 gem install gemenv
 gem install mysql2
 
@@ -66,11 +68,14 @@ chown -R ruby:ruby /home/ruby/www
 
 # Configuring image specific packages
 echo "* Configuring image specific packages.";
+
 mkdir -p /var/log/httpd/old
 
 chmod 0640 /opt/qutic/mysql-proxy/etc/my.cnf
 svccfg import /opt/qutic/mysql-proxy/share/mysql-proxy.xml
 svcadm enable mysql-proxy
+
+echo "export PASSENGER_INSTANCE_REGISTRY_DIR=/var/tmp" >> /root/.bashrc
 
 # Clean up
 echo "* Cleaning up."

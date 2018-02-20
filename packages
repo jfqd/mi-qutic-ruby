@@ -8,10 +8,6 @@ git-base
 memcached
 redis
 ruby22
-ruby22-daemon_controller
-ruby22-bundler
-ruby22-nokogiri
-ruby22-coffee-script
 ruby22-passenger
 ap24-ruby22-passenger
 ap24-usdt
