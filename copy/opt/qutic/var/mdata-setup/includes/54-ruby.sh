@@ -22,13 +22,14 @@ MAXINSTANCES=10
 if mdata-get passenger_maxinstances 1>/dev/null 2>&1; then
   MAXINSTANCES=`mdata-get passenger_maxinstances`
 fi
-sed -i "s:MAXINSTANCES:$MAXINSTANCES:g" /opt/local/etc/httpd/vhosts/01-ruby.conf
+sed -i "s:MAXINSTANCES:$MAXINSTANCES:g" /opt/local/etc/httpd/conf.d/99-passenger.conf
 
 WORKERS=4
 if mdata-get passenger_workers 1>/dev/null 2>&1; then
   WORKERS=`mdata-get passenger_workers`
 fi
 sed -i "s:WORKERS:$WORKERS:g" /opt/local/etc/httpd/vhosts/01-ruby.conf
+sed -i "s:WORKERS:$WORKERS:g" /opt/local/etc/httpd/conf.d/99-passenger.conf
 
 # Enable apache by default
 /usr/sbin/svcadm enable svc:/pkgsrc/apache:default
