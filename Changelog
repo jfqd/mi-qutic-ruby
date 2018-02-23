@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.4.3
+
+* rearange passenger options
+* remove pkgsrc gems and install them directly
+* move passenger config from vhost into global
+
 ## 17.4.2
 
 * update to latest passenger 5.2.0

@@ -1,11 +1,11 @@
 {
   "name":         "qutic-ruby",
-  "version":      "17.4.2",
+  "version":      "17.4.3",
   "description":  "qutic base image",
   "organization": "qutic development",
   "brand":        "Ruby Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-ruby",
-  "base":         "31ea7dee-0a8d-11e8-9d33-eb63e3201a8b",
+  "base":         "c95728c6-18ac-11e8-b259-bf7f0f540037",
   "customer_metadata": {
     "admin_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "ruby_authorized_keys":   {"type": "text", "description": "SSH public authorized key(s) for the ruby user"},
