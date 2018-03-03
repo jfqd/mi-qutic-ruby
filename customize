@@ -77,6 +77,10 @@ svcadm enable mysql-proxy
 
 echo "export PASSENGER_INSTANCE_REGISTRY_DIR=/var/tmp" >> /root/.bashrc
 
+# ruby process watch
+svccfg import /opt/qutic/lib/svc/manifest/rbpswatch.xml
+svcadm enable rbpswatch
+
 # Clean up
 echo "* Cleaning up."
 #pkgin -y remove gmake
