@@ -1,9 +1,9 @@
 {
   "name":         "qutic-ruby",
   "version":      "17.4.3",
-  "description":  "qutic base image",
+  "description":  "qutic ruby 2.2 image",
   "organization": "qutic development",
-  "brand":        "Ruby Instance",
+  "brand":        "Ruby 2.2 Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-ruby",
   "base":         "c95728c6-18ac-11e8-b259-bf7f0f540037",
   "customer_metadata": {
