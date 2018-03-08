@@ -10,7 +10,7 @@ gsed -i \
      -e "s/# maxmemory <bytes>/maxmemory 256mb/" \
      -e "s/# maxmemory-policy noeviction/# maxmemory-policy allkeys-lfu/" \
      -e "s/# unixsocket \/tmp\/redis.sock/unixsocket \/var\/tmp\/redis.sock/" \
-     -e "s/bind 127.0.0.1/bind ${IP_INTERNAL:-${IP_EXTERNAL}}/" \
+     -e "s/bind 127.0.0.1/bind ${IP_INTERNAL}/" \
      /opt/local/etc/redis.conf
 
 touch /var/log/redis/redis.log

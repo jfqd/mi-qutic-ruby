@@ -8,7 +8,7 @@ fi
 
 gsed -i \
      -e "s/memcached -d -u/memcached -d -U 0 -u/" \
-     -e "s/value='127.0.0.1'/value='${IP_INTERNAL:-${IP_EXTERNAL}}'/" \
+     -e "s/value='127.0.0.1'/value='${IP_INTERNAL}'/" \
      -e "s/value='64'/value='1024'/" \
      /opt/local/lib/svc/manifest/memcached.xml
 
