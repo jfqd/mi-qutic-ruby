@@ -18,7 +18,7 @@ do
       if [[ ! -f /home/ruby/www/current/.delayed_job_lock ]]; then
         if [[ $(/usr/bin/pgrep -f .*delayed_job.* | /usr/bin/wc -l) -eq 0 ]]; then
           /usr/bin/cd /home/ruby/www/current
-          /opt/local/bin/bundle exec ruby script/delayed_job start -n 4 || /usr/bin/echo "ruby script/delayed_job start: $?"
+          /opt/local/bin/bundle exec ruby script/delayed_job start -n 2 || /usr/bin/echo "ruby script/delayed_job start: $?"
         fi
       fi
     fi
