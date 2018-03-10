@@ -9,7 +9,9 @@ MUNIN_PLUGINS="
 	apache_accesses
 	apache_processes
 	apache_volume
+	httpd_memory
 	passenger_status
+	passenger_memory
 	ps_httpd
 	ps_delayed_job
 "
