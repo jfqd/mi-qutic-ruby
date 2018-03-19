@@ -1,5 +1,17 @@
 # Changelog
 
+## 17.4.4
+
+* build on 17.4.6 base image
+* add passenger related cronjobs
+* add more munin plugins
+* add a new nagios check
+* reduce max-passenger-requests
+* set TMPDIR to /var/tmp
+* add rbpswatch
+* fix IP_INTERNAL
+* add ruby version to manifest
+
 ## 17.4.3
 
 * rearange passenger options
